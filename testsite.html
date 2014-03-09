@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>JavaScript Hello World</title>
+		<script>
+		function myFunction()
+		{
+			alert("Hello World!")
+		}
+		function addNewLine(tableID, name, msg) {
+            var table = document.getElementById(tableID);
+ 
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+
+            var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			cell1.innerHTML = name;
+			cell2.innerHTML = msg;
+        }
+
+        /*<?php
+		function sendMessage()
+		{
+			require "twilio-php-master/Services/Twilio.php";
+
+			$AccountSid = "AC79900bb5daf942cc25425603a84ee298";
+			$AuthToken = "e84fc4b034093d65338655d8506b95ef";
+
+			$client = new Services_Twilio($AccountSid, $AuthToken);
+
+			//Test
+			if(isset($_POST['PhoneNumberReceiver'])) 
+			{
+			  $PhoneNumberReceiver=$_POST['PhoneNumberReceiver'];
+			}
+			else 
+			{
+			  echo "PhoneNumberReceiver was not set in the form\n";
+			}
+			if(isset($_POST['Message'])) {
+			  $Message=$_POST['Message'];
+			}
+			else 
+			{
+			  echo "Message was not set in the form\n";
+			}
+
+			//$people = array(
+			//	$PhoneNumberReceiver => "Henry"
+			//);
+
+			$sms = $client->account->messages->sendMessage("408-215-9670", $PhoneNumberReceiver, $Message);
+			echo "Sent message";
+	}
+	?> */
+		</script>
+		
+	</head>
+	<body>
+		<h1>Testing Text Message Function </h1>
+		<TABLE id="conversationTable" width="350px" border="0">
+		    <TR>
+		    </TR>
+		 </TABLE>
+
+		<form action="http://localhost/Homepage/test.php" method="post">
+		<!-- <form> -->
+			Phone Number: <input type="text" name="PhoneNumberReceiver"/><br>
+			Message: <input type="text" name="Message"/><br>
+		 	<p><input type="submit" value="Submit" onclick="addNewLine('conversationTable', this.form.PhoneNumberReceiver.value, this.form.Message.value)" />
+		</form>
+		<!-- <?php include("test.php"); ?> -->
+	</body>
+</html>

@@ -1,0 +1,18 @@
+html { 
+	background: #00BFFF;
+}
+
+header { 
+	height: 150px;
+}
+
+h1 { 
+	color: white;
+	font: 20px Verdana;
+	height: 50px;
+}
+
+body { 
+	color: white;
+	font: 15px Verdana;
+}
